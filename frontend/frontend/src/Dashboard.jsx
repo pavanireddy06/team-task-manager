@@ -5,9 +5,9 @@ export default function Dashboard(){
   const [tasks,setTasks]=useState([]);
 
   useEffect(()=>{
-    axios.get("http://team-task-manager-production-d61e.up.railway.app",{
-      headers:{authorization:localStorage.getItem("token")}
-    }).then(res=>setTasks(res.data));
+    axios.get("https://team-task-manager-production-d61e.up.railway.app/api/tasks?projectId=", {
+  headers: { authorization: localStorage.getItem("token") }
+});then(res=>setTasks(res.data));
   },[]);
 
   const total = tasks.length;

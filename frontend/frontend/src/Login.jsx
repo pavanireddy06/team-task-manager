@@ -6,7 +6,7 @@ export default function Login(){
   const [password,setPassword]=useState("");
 
   const login = async()=>{
-    const res = await axios.post("http://team-task-manager-production-d61e.up.railway.app",{email,password});
+    const res = await axios.post("https://team-task-manager-production-d61e.up.railway.app/api/auth/login",{email,password});;
     localStorage.setItem("token",res.data.token);
     window.location="/dashboard";
   }
